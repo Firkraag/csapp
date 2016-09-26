@@ -7,7 +7,7 @@
 
 #include<stdio.h>
 
-/* return 1 when run on a big-endian machine, and return */
+/* return 1 when run on a big-endian machine, otherwise return 0 */
 int is_big_endian() {
     int x = 0x100;
     unsigned char *ptr = (unsigned char *) &x;
