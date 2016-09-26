@@ -9,14 +9,28 @@ int tsub_ok(int x, int y) {
 	return !((x >= 0 && y == INT_MIN) || (x < 0 && y > 0 && sum >= 0) || (x > 0 && y < 0 && y > INT_MIN && sum < 0));
 }
 
-//main() {
-	//int i;
-//	
-	//printf("INT_MIN = %d\n", INT_MIN);	
-	////for (i = -100; i < 100; i++)
-		//////printf("i = %d, i - INT_MIN = %d, i + INT_MIN = %d\n", i, i - INT_MIN, i + INT_MIN);
-		////printf("i = %d, result = %d\n", i, tsub_ok(i, INT_MIN));
-	//printf("%d\n", tsub_ok(INT_MIN, 1));
-	//printf("%d\n", INT_MIN - 1);
-	////printf("%d\n", tsub_ok(INT_MAX, 1));
-//}
+int main() {
+    int x = INT_MIN;
+    int y = INT_MIN + 1;
+	
+    for (int i = -3; i < 3; i++) {
+        if (tsub_ok(i, x))
+            printf("%d and %d can be substracted without causing overflow\n", i, x);
+        else
+            printf("%d - %d causes overflow\n", i, x);
+    }
+
+    for (int i = -3; i < 3; i++) {
+        if (tsub_ok(x, i))
+            printf("%d and %d can be substracted without causing overflow\n", x, i);
+        else
+            printf("%d - %d causes overflow\n", x, i);
+    }
+
+    for (int i = -3; i < 3; i++) {
+        if (tsub_ok(i, y))
+            printf("%d and %d can be substracted without causing overflow\n", i, y);
+        else
+            printf("%d - %d causes overflow\n", i, y);
+    }
+}

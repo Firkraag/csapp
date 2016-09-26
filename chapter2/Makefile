@@ -1,6 +1,6 @@
 CC = gcc
 CFLAGS = -Wall -O2
-PROGS = cs2-12 uadd_ok byteOrdering put_byte cs2-61 isLogicalShift \
+PROGS = cs2-12 uadd_ok tadd_ok byteOrdering put_byte cs2-61 isLogicalShift \
 		cs2-63 any_even_one even_ones lower_bits rotate_right\
 		fits_bits
 OBJS = cs2-12.o cs2-58.o 
@@ -8,6 +8,9 @@ OBJS = cs2-12.o cs2-58.o
 all: $(PROGS)
 
 uadd_ok: cs2-27.c
+	$(CC) -o $@ $(CFLAGS) $^
+
+tadd_ok: cs2-30.c
 	$(CC) -o $@ $(CFLAGS) $^
 
 byteOrdering: cs2-58.c 
