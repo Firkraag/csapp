@@ -6,6 +6,7 @@ int div16(int x) {
 	return (x + bias) >> 4;
 }
 
-//int main() {
-	//printf("%d\n", div16(-200));
-//}
+int main() {
+    for (int x = -100; x <= 100; x += 10)
+        printf("%d / 16 = %d\n", x, div16(x));
+}

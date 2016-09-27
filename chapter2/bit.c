@@ -20,7 +20,7 @@ unsigned lower_ones(int n) {
  */
 unsigned higher_ones(int n) {
     int int_size = sizeof(int) << 3;
-    if (n == 32)
+    if (n == int_size)
         return ~0;
     else
         return ~lower_ones(int_size - n);

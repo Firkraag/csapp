@@ -4,11 +4,11 @@
 /* When overflow, return 0; otherwise return 1 */
 int tmul_ok(int x, int y) {
 	int p = x * y;
-    printf("%d\n", x);
-    printf("%d\n", y);
-    printf("%d\n", p);
-    printf("%d\n", p / x);
-	return !x || (p / x == y);
+    //When p / x is out of the range of int, its value is undefined
+    if (p == INT_MIN && x == -1)
+        return 0;
+    else
+        return !x || (p / x == y);
 }
 
 int main() {

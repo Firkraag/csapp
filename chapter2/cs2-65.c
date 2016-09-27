@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 int bit(int x, int k) {
-	return 0x1 & (x >> k - 1);
+	return 0x1 & (x >> (k - 1));
 }
 //Return 1 when x contains an even number of 1s; 0 otherwise. You may assume that data type int has w = 32 bits
 int even_ones(unsigned x) {
