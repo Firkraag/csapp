@@ -17,9 +17,6 @@ int saturating_add(int x, int y) {
 }
 
 int main() {
-    int x = INT_MIN;
-    int y = INT_MAX;
-
     printf("saturating_add(%d, %d) = %d\n", INT_MIN, -1, saturating_add(INT_MIN, -1));
     printf("saturating_add(%d, %d) = %d\n", INT_MAX, 1, saturating_add(INT_MAX, 1));
     printf("saturating_add(%d, %d) = %d\n", 1, -1, saturating_add(1, -1));

@@ -13,4 +13,7 @@ int main() {
 
 	for (i = 0; i <= 10; i++)
 		printf("%d / 2^%d = %d\n", x, i, divide_power2(x, i));
+    x = -5000;
+	for (i = 0; i <= 10; i++)
+		printf("%d / 2^%d = %d\n", x, i, divide_power2(x, i));
 }

@@ -1,5 +1,7 @@
 #include "csapp.h"
 
+/* Compute 3x/4, replicating the fact that
+ * 3 * x can cause overflow */
 int mul3div4(int x) {
     //mul = 3 * x
     int mul = (x << 1) + x;
@@ -13,7 +15,6 @@ int mul3div4(int x) {
 
 int main() {
     int i;
-    int x = INT_MIN;
 
     for (i = -10; i <= 10; i++)
         if (mul3div4(i) != 3 * i / 4) {
