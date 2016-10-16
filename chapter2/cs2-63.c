@@ -25,13 +25,16 @@ int sra(int x, int k) {
 
 //Function srl performs a logical right shift using an arithmetic right shift given by value xsra
 unsigned srl(unsigned x, int k) {
-	unsigned xsra = (int) x >> k;
+    unsigned xsra = (int) x >> k;
 	int int_size = sizeof(int) << 3;
+    int shift = int_size - 1 - k;
+    /*Since shift by 32 is undefined, we perform shift by 32
+     * in two steps: first 31, then 1
+     */
+    int mask = ~(((~0x0) << shift) << 1);
+
+    return xsra & mask;
     
-    if (k == 0)
-        return x;
-    else
-        return xsra & (~((~0x0) << (int_size - k))); 
 }
 
 int main() {
